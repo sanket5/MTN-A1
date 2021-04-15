@@ -1,4 +1,12 @@
 
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background: linear-gradient(to bottom, #fff5e7 , #f5c484);
+}
+
 
 .card{
     width: 50%;
