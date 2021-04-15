@@ -1,11 +1,11 @@
 
 <div class="container">
-    <div class="card">
+    <div class="card col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
         <div class="form_container">
             <h3 class="card-title"> Login </h3>
             <form [formGroup]="loginForm" class="login_form" (ngSubmit)="onLogin()" >
                 <div class="form-group">
-                    <label class="form_label" for="email">User Name</label>
+                    <label class="form_label" for="email">Username</label>
                     <input type="text" id="uname" class="form-control" placeholder="abc@mtn.com" formControlName="email" required>
                     <small *ngIf="emailErr" id="emailErr" class="text-danger">Must be a valid Email</small>
 
@@ -13,7 +13,7 @@
                 <div class="form-group">
                     <label class="form_label" for="password">Password</label>
                     <input type="text" id="pass" class="form-control" placeholder="Password containing characters between 6 and 20" formControlName="password" required>
-                    <small *ngIf="passwordErr" id="passErr" class="text-danger" > Invalid Password, Must have 6-20 characters</small>
+                    <small *ngIf="passwordErr" id="passErr" class="text-danger" >Invalid Password, Must have 6-20 characters</small>
                 </div>
                 <div>
                     <button class="btn btn-primary" type="submit" > Login</button>

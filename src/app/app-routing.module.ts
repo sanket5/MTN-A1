@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CarouselComponent } from './carousel/carousel.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
-    path:'', component:LoginComponent
+    path:'login', component:LoginComponent
+  },
+  {
+    path:'carousel', component: CarouselComponent
+  },
+  {
+    path:'', redirectTo:'login', pathMatch:'full'
   }
 ];
 
