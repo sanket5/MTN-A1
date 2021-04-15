@@ -1,10 +1,13 @@
 
 
+.container{
+    height: 100%
+}
 
 .card{
     width: 50%;
     margin: 0 auto;
-    border: 5px #f771da solid;
+    border: 5px #f7c1c1 solid;
     border-radius: 20px;
     margin-top: 50px;
     padding: 30px;
@@ -23,4 +26,7 @@
 .form_label{
     font-size: large;
     font-weight: 400;
+}
+.login_success{
+    margin: 20px;
 }

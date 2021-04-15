@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
   isSubmitted: boolean = false
   loginForm:FormGroup
 
+  passwordErr:boolean = false
+  emailErr: boolean = false
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -29,12 +31,23 @@ export class LoginComponent implements OnInit {
   get email() { return this.loginForm.get('email')};
   get password() { return this.loginForm.get('password')};
 
+
   onLogin(){
-    console.log(this.loginForm.value);
+    this.emailErr=this.passwordErr = false
     if (this.loginForm.valid){
       this.isSubmitted = true
+      setTimeout(() => {
+        this.isSubmitted = false
+      }, 3000);
     }else{
-      
+      if(this.email.invalid && this.password.invalid){
+        this.emailErr = this.passwordErr = true
+      }else if (this.email.invalid){
+        this.emailErr = true
+      }
+      else{
+        this.passwordErr = true
+      }
     }
   }
 
