@@ -33,6 +33,12 @@ describe('NavbarComponent', () => {
       fixture.whenStable().then(()=>{
         expect(component.activateLink).toHaveBeenCalled()
       })
+      linklist[1].click()
+      tick()
+      fixture.detectChanges()
+      fixture.whenStable().then(()=>{
+        expect(component.activateLink).toHaveBeenCalled()
+      })
     })
   )
 

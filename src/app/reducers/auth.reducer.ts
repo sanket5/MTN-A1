@@ -14,6 +14,8 @@ export function authReducer( state: AuthState[] = [initialState], action: authAc
     switch(action.type){
         case authActions.LOGIN:
             return [...state, action.payload]
+        case authActions.LOGIN_ERROR:
+            return [...state, action.payload]
         default:
             return state
     }

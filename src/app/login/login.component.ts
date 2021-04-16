@@ -73,6 +73,11 @@ export class LoginComponent implements OnInit {
         return true
       }
       else{
+        this.store.dispatch( new AuthAction.LoginError({
+          isAuthenticated : false,
+          user: null,
+          errorMessage: 'Login Error Occuce'
+        }) )
         return false
       }
     })
