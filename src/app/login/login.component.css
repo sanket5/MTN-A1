@@ -5,11 +5,16 @@
 }
 
 .card{
-
     border: 5px #f7c1c1 solid;
     border-radius: 20px;
     margin-top: 50px;
-    padding: 30px;
+    padding: 30px;  
+    box-shadow: 2px 4px 10px #6b5151, -2px 4px 10px #6b5151;
+    transition: all .3s;    
+
+}
+.card:hover{
+    box-shadow: 5px 8px 15px #6b5151, -5px 8px 15px #6b5151;
 }
 
 .login_form{
@@ -28,7 +33,11 @@
 }
 .login_success{
     margin: 20px;
+    color: green;
 }
-.btn-primary{
+.btn-info{
     float: right;
+}
+.text-danger{
+    font-weight: 600;
 }

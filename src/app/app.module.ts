@@ -8,6 +8,9 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselComponent } from './carousel/carousel.component';
 
+import { StoreModule } from '@ngrx/store'
+import { authReducer } from '../app/reducers/auth.reducer'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +20,12 @@ import { CarouselComponent } from './carousel/carousel.component';
   ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot({
+      authReducer: authReducer
+    }),
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
