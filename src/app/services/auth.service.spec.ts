@@ -14,15 +14,15 @@ describe('AuthService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return user data for successfull login',(done:DoneFn)=>{
-    let loginPayload = {
+  it('should return user data for successfull login', (done: DoneFn) => {
+    const loginPayload = {
     email: 'email@email',
     password: 'qwerty123'
-    }
-    service.login(loginPayload).subscribe((res)=>{
-      expect(res).toBeTruthy()
-      done()
-    })
-  })
+    };
+    service.login(loginPayload).subscribe((res) => {
+      expect(res).toBeTruthy();
+      done();
+    });
+  });
 
 });

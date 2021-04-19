@@ -12,14 +12,14 @@ export class AppComponent implements OnInit {
 
   constructor(private store: Store, private state: State<AuthState>){ }
 
-  ngOnInit(){
-    this.isLoggedIn()
+  ngOnInit(): void{
+    // this.isLoggedIn()
   }
 
 
-  isLoggedIn(){
+  isLoggedIn(): void{
     console.log(this.state.value);
-    
+
   }
 
 }

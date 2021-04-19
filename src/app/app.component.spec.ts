@@ -3,15 +3,17 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { authReducer } from './reducers/auth.reducer';
-import { Store } from '@ngrx/store'
+import { Store } from '@ngrx/store';
+import { reducers, metaReducers } from './store';
+import { reducer } from './store/reducers/authreducer.reducer';
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        StoreModule.forRoot(authReducer)
+        StoreModule.forRoot(reducer)
       ],
       declarations: [
         AppComponent, NavbarComponent
@@ -31,10 +33,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('MTN App');
   });
 
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('MTN-A1 app is running!');
-  // });
 });

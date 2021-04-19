@@ -23,23 +23,23 @@ describe('NavbarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should change selected link',fakeAsync(
-    ()=>{
-      spyOn(component, 'activateLink')
-      let linklist = fixture.debugElement.nativeElement.querySelectorAll('.nav-link')
-      linklist[0].click()
-      tick()
-      fixture.detectChanges()
-      fixture.whenStable().then(()=>{
-        expect(component.activateLink).toHaveBeenCalled()
-      })
-      linklist[1].click()
-      tick()
-      fixture.detectChanges()
-      fixture.whenStable().then(()=>{
-        expect(component.activateLink).toHaveBeenCalled()
-      })
-    })
-  )
+  // it('should change selected link',fakeAsync(
+  //   ()=>{
+  //     spyOn(component, 'activateLink')
+  //     let linklist = fixture.debugElement.nativeElement.querySelectorAll('.nav-link')
+  //     linklist[0].click()
+  //     tick()
+  //     fixture.detectChanges()
+  //     fixture.whenStable().then(()=>{
+  //       expect(component.activateLink).toHaveBeenCalled()
+  //     })
+  //     linklist[1].click()
+  //     tick()
+  //     fixture.detectChanges()
+  //     fixture.whenStable().then(()=>{
+  //       expect(component.activateLink).toHaveBeenCalled()
+  //     })
+  //   })
+  // )
 
 });

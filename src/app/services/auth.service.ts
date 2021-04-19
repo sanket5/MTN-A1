@@ -8,16 +8,16 @@ export class AuthService {
 
   constructor() { }
 
-  login(payload){
-    const loginSer = Observable.create((obs)=>{
+  login(payload): Observable<any>{
+    const loginSer = new Observable((obs) => {
       setTimeout(() => {
-        payload.status = true
-        obs.next(payload)
+        payload.status = true;
+        obs.next(payload);
       }, 1000);
-    })
-    return loginSer
+    });
+    return loginSer;
   }
 
-  
+
 
 }

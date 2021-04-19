@@ -12,10 +12,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  activateLink(e){
-    document.querySelector('.active').classList.remove('active')
-    let el = e.target as HTMLElement
-    el.parentElement.className = 'active'
-  }
+  // activateLink(e){
+  //   document.querySelector('.active').classList.remove('active')
+  //   let el = e.target as HTMLElement
+  //   el.parentElement.className = 'active'
+  // }
 
 }
