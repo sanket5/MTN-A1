@@ -1,7 +1,7 @@
 
 <div class="row">
     <div class="card col-lg-10 offset-lg-1">
-        <div class="row" *ngIf="showData">
+        <div class="row" *ngIf="user | async ; let user">
             <div class="title col-8 offset-2" >
                 Dashboard
             </div>
@@ -9,7 +9,7 @@
                 <button class="btn btn-info" (click)="logOut()" >  Logout </button>
             </div>
             <div class="col-lg-10 offset-lg-1 user">
-                Welcome User {{ appState.user.email }}
+                Welcome {{ user.email }}
             </div>
         </div>
     </div>

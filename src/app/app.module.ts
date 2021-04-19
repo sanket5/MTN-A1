@@ -12,6 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { reducers, metaReducers } from './store';
+import { EffectsModule } from '@ngrx/effects';
+// import { AutheffectEffects } from './store/effects/autheffect.effects';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { reducers, metaReducers } from './store';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    // EffectsModule.forRoot([AutheffectEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]
