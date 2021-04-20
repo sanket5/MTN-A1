@@ -7,9 +7,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto" >
-        <li class="nav-item active">
+        <li *ngIf="(user|async) === null; else thisuser" class="nav-item active">
           <a class="nav-link" routerLink="/login" >Login </a>
         </li>
+        <ng-template #thisuser>
+          <li class="nav-item active">
+            <a class="nav-link"> Logged as: &nbsp;&nbsp;<b>{{ (user | async).email }} </b></a>
+          </li>
+        </ng-template>
       </ul>
     </div>
 </nav>

@@ -14,5 +14,5 @@ export const logout = createAction(
 export const sendUserData = createAction(
   '[auth effects] send user data',
     props<{ data: User }>()
-)
+);
 

@@ -35,12 +35,12 @@ export const reducer = createReducer(
       errorMessage: action.data.errorMessage
     };
 }),
-on(sendUserData, (state, action)=>{
+on(sendUserData, (state, action) => {
   return{
     ...state,
     loginStatusSent: action.data
-  }
-})  
+  };
+})
 
 );
 

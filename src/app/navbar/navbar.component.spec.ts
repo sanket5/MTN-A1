@@ -1,4 +1,6 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+import { reducers , metaReducers} from '../store';
 
 import { NavbarComponent } from './navbar.component';
 
@@ -8,7 +10,8 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      declarations: [ NavbarComponent ],
+      imports: [StoreModule.forRoot(reducers, { metaReducers })]
     })
     .compileComponents();
   });

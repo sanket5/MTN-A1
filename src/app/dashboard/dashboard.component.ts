@@ -15,14 +15,14 @@ import { selectUser } from '../store/selectors/authselector.selectors';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  user: Observable<User>
+  user: Observable<User>;
   showData = false;
 
   constructor(private store: Store<State>, private router: Router) {
   }
 
   ngOnInit(): void{
-    this.user = this.store.pipe(select(selectUser))
+    this.user = this.store.pipe(select(selectUser));
   }
 
 

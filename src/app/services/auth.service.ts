@@ -19,8 +19,8 @@ export class AuthService {
     return loginSer;
   }
 
-  sendUserLoginStatus(user:User) : Observable<User>{
-    return of(user)
+  sendUserLoginStatus(user: User): Observable<User>{
+    return of(user);
   }
 
 
