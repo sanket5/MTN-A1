@@ -13,6 +13,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { reducers, metaReducers } from './store';
 import { EffectsModule } from '@ngrx/effects';
+import { UsernamePipe } from './pipes/username.pipe';
 // import { AutheffectEffects } from './store/effects/autheffect.effects';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { EffectsModule } from '@ngrx/effects';
     LoginComponent,
     NavbarComponent,
     DashboardComponent,
+    UsernamePipe,
   ],
   imports: [
     BrowserModule,

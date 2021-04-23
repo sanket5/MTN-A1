@@ -8,7 +8,7 @@
             <div class="col-2"> 
             </div>
             <div class="col-lg-10 offset-lg-1 user">
-                Welcome {{ user.email }}
+                Welcome {{ user.email | username }}
             </div>
         </div>
         <ng-template #guest >
