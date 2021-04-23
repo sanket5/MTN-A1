@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
         };
         this.store.dispatch(login({data: p})
         );
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['home']);
         this.isSubmitted = true;
         return true;
       }

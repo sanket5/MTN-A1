@@ -3,18 +3,18 @@
     <div class="card col-lg-10 offset-lg-1">
         <div class="row" *ngIf="user | async ; let user; else guest">
             <div class="title col-8 offset-2" >
-                Dashboard
+                Home Page
             </div>
             <div class="col-2"> 
-                <button class="btn btn-info" (click)="logOut()" >  Logout </button>
             </div>
             <div class="col-lg-10 offset-lg-1 user">
                 Welcome {{ user.email }}
             </div>
         </div>
         <ng-template #guest >
-            <div class="title col-8 offset-2">
-                <span> Welcome Guest, Please log in. </span>
+            <div class="col-8 offset-2 guest title">
+                <div> <b> Welcome Guest </b> </div>
+                <div> Please log in. </div>
             </div>
         </ng-template>
     </div>

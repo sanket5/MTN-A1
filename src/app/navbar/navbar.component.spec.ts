@@ -1,4 +1,6 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
 import { reducers , metaReducers} from '../store';
 
@@ -7,11 +9,15 @@ import { NavbarComponent } from './navbar.component';
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
+  let router: Router;
+
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ NavbarComponent ],
-      imports: [StoreModule.forRoot(reducers, { metaReducers })]
+      imports: [StoreModule.forRoot(reducers, { metaReducers }),
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   });
@@ -20,6 +26,8 @@ describe('NavbarComponent', () => {
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    router = TestBed.inject(Router);
+
   });
 
   it('should create', () => {
@@ -44,5 +52,11 @@ describe('NavbarComponent', () => {
   //     })
   //   })
   // )
+
+  it('should navigate to login after logout', () => {
+    spyOn(router, 'navigate').and.stub();
+    component.logOut();
+    expect(router.navigate).toHaveBeenCalledWith(['login']);
+  });
 
 });

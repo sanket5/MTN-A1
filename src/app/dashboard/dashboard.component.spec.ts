@@ -52,10 +52,6 @@ describe('DashboardComponent', () => {
 
   // })
 
-  it('should navigate to login after logout', () => {
-    spyOn(router, 'navigate').and.stub();
-    component.logOut();
-    expect(router.navigate).toHaveBeenCalledWith(['login']);
-  });
+
 
 });

@@ -26,14 +26,6 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  logOut(): void{
-    const payload: AuthState = {
-      isAuthenticated : false,
-      errorMessage: null,
-      user : null
-    };
-    this.store.dispatch(logout({data: payload}));
-    this.router.navigate(['login']);
-  }
+
 
 }

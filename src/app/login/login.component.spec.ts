@@ -106,7 +106,7 @@ describe('LoginComponent', () => {
   component.onLogin();
   tick(2000);
   fixture.detectChanges();
-  expect(router.navigate).toHaveBeenCalledWith(['dashboard']);
+  expect(router.navigate).toHaveBeenCalledWith(['home']);
 }) );
 
 
