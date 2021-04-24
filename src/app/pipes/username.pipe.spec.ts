@@ -6,11 +6,11 @@ describe('UsernamePipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('should return only User name skipping symbols',()=>{
+  it('should return only User name skipping symbols', () => {
     const pipe = new UsernamePipe();
-    let result = pipe.transform('sanket@ibm.com')
-    expect(result).toEqual('Sanket')
-  })
+    const result = pipe.transform('sanket@ibm.com');
+    expect(result).toEqual('Sanket');
+  });
 });
 
 

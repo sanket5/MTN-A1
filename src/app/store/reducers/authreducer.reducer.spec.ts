@@ -1,13 +1,11 @@
-// import { reducer, initialState } from './authreducer.reducer';
+import * as fromReducer from './authreducer.reducer';
+import * as authAction from './../actions/authaction.actions';
 
-// describe('Authreducer Reducer', () => {
-//   describe('an unknown action', () => {
-//     it('should return the previous state', () => {
-//       const action = {} as any;
+describe('Store > Data > DataReducer', () => {
 
-//       const result = reducer(initialState, action);
-
-//       expect(result).toBe(initialState);
-//     });
-//   });
-// });
+  it('SHOULD return the default state', () => {
+    const { initialState } = fromReducer;
+    const state = fromReducer.reducer(undefined, { type: null })
+    expect(state).toBe(initialState);
+  })
+  });

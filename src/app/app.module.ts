@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { reducers, metaReducers } from './store';
 import { EffectsModule } from '@ngrx/effects';
 import { UsernamePipe } from './pipes/username.pipe';
+import { AutheffectEffects } from './store/effects/autheffect.effects';
 // import { AutheffectEffects } from './store/effects/autheffect.effects';
 
 @NgModule({

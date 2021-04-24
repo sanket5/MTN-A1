@@ -11,8 +11,12 @@ export const logout = createAction(
   props<{ data: AuthState }>()
 );
 
-export const sendUserData = createAction(
-  '[auth effects] send user data',
-    props<{ data: User }>()
+export const loginSuccess = createAction(
+  '[Authaction] Loging success',
+  props<{ data: AuthState }>()
 );
 
+export const loginFailure = createAction(
+  '[Authaction] Loging failed',
+  props<{ data: any }>()
+);
