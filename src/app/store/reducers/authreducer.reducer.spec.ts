@@ -5,7 +5,7 @@ describe('Store > Data > DataReducer', () => {
 
   it('SHOULD return the default state', () => {
     const { initialState } = fromReducer;
-    const state = fromReducer.reducer(undefined, { type: null })
+    const state = fromReducer.reducer(undefined, { type: null });
     expect(state).toBe(initialState);
-  })
+  });
   });
