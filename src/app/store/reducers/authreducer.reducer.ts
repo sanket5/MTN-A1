@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { User } from 'src/app/models/user.model';
-import { login, loginFailure, loginSuccess, logout } from '../actions/authaction.actions';
+import { login, loginSuccess, logout } from '../actions/authaction.actions';
 
 
 export const authreducerFeatureKey = 'authreducer';
@@ -19,20 +19,15 @@ export const initialState: State = {
 
 export const reducer = createReducer(
   initialState,
-  on(loginSuccess, (state, action) => {
-      return {
+  on(loginSuccess, logout, (state, action) => {
+    return {
         ...state,
         isAuthenticated: action.data.isAuthenticated,
         user: action.data.user,
         errorMessage: action.data.errorMessage
       };
   }),
-  on(loginFailure, (state, action) => {
-    return {
-      ...state,
-      errorMessage: 'Login failed'
-    };
-})
+
 
 );
 

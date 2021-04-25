@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit {
   constructor(private store: Store<State>, private router: Router) { }
 
   ngOnInit(): void {
-    console.log('sda');
 
     this.user = this.store.pipe(select(selectUser));
   }
@@ -39,6 +38,7 @@ export class NavbarComponent implements OnInit {
       user : null
     };
     this.store.dispatch(logout({data: payload}));
+    localStorage.removeItem('User');
     this.router.navigate(['login']);
   }
 

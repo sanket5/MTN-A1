@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
   onLogin(): void{
     this.emailErr = this.passwordErr = false;
     if (this.loginForm.valid){
-      this.login(this.loginForm.value);
+      this.login();
     }else{
       if (this.email.invalid && this.password.invalid){
         this.emailErr = this.passwordErr = true;
@@ -65,11 +65,7 @@ export class LoginComponent implements OnInit {
   }
 
   // Update app states as per the response
-  login(payload): void{
-    console.log('in login');
-
-    this.authService.login(payload).subscribe((response) => {
-      if (response.status === true){
+  login(): void{
         console.log('in true');
         const p: AuthState = {
           isAuthenticated : true,
@@ -78,14 +74,7 @@ export class LoginComponent implements OnInit {
         };
         this.store.dispatch(login({data: p})
         );
-        this.router.navigate(['home']);
         this.isSubmitted = true;
-        return true;
-      }
-      else{
-        return false;
-      }
-    });
   }
 
 }

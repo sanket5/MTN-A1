@@ -12,11 +12,12 @@ export const logout = createAction(
 );
 
 export const loginSuccess = createAction(
-  '[Authaction] Loging success',
+  '[Authaction] Login Success',
   props<{ data: AuthState }>()
 );
 
-export const loginFailure = createAction(
-  '[Authaction] Loging failed',
-  props<{ data: any }>()
+export const loginError = createAction(
+  '[Authaction] Login failure',
+  props<{ data: Error }>()
 );
+

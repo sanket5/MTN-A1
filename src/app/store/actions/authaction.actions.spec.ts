@@ -16,12 +16,12 @@ describe('Store > Data > DataActions', () => {
 describe('Store > Data > DataActions', () => {
     it('SHOULD create a login success action', () => {
       const action = Authaction.loginSuccess;
-      expect(action.type).toEqual( '[Authaction] Loging success');
+      expect(action.type).toEqual( '[Authaction] Login Success');
     });
 });
 describe('Store > Data > DataActions', () => {
     it('SHOULD create a login failure action', () => {
-      const action = Authaction.loginFailure;
-      expect(action.type).toEqual( '[Authaction] Loging failed' );
+      const action = Authaction.loginError;
+      expect(action.type).toEqual(  '[Authaction] Login failure' );
     });
 });

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, EffectsFeatureModule, ofType } from '@ngrx/effects';
+import { act, Actions, createEffect, EffectsFeatureModule, ofType } from '@ngrx/effects';
 import { AuthService } from 'src/app/services/auth.service';
 import * as authAction from '../actions/authaction.actions';
-import { mergeMap, map, tap } from 'rxjs/operators';
+import { mergeMap, map, tap, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
-
+import { merge, Observable, of } from 'rxjs';
+import { Action, createAction } from '@ngrx/store';
+import { AuthState } from 'src/app/models/user.model';
 
 
 @Injectable()
@@ -13,32 +15,30 @@ export class AutheffectEffects {
               private router: Router
     ) {}
 
-
-
-  login$ = createEffect(() => {
-    console.log('in login effect');
-
-    return this.actions$.pipe(
+  $login = createEffect(() =>
+    this.actions$.pipe(
       ofType(authAction.login),
-      tap( action => {
-        console.log('in loin ffcr');
-        localStorage.setItem('User', JSON.stringify(action.data));
-        authAction.loginSuccess(action);
-        this.router.navigate(['home']);
-      })
-      );
-    });
+      // tap(() => {  console.log('in login effect');
+      //  }),
+       mergeMap((action) => {
+        return this.authService.login(action.data).pipe(
+          map(res => {
+            localStorage.setItem('User', JSON.stringify(res.user));
+            return authAction.loginSuccess({data: res});
+          } ),
+          catchError(error => of(authAction.loginError({data: error})) ),
+          tap(() => console.log('effect finished'))
+        );
+       })
+    )
+  );
 
-    logout$ = createEffect(() => {
-      return this.actions$.pipe(
-        ofType(authAction.logout),
-        tap( action => {
-          localStorage.removeItem('User');
-          this.router.navigate(['login']);
-          return false;
-        } )
-      );
-    });
-
+  $loginSucces = createEffect(() =>
+       this.actions$.pipe(
+         ofType(authAction.loginSuccess),
+         tap(() => this.router.navigate(['home']) )
+       ), { dispatch: false
+      }
+  );
 
 }
