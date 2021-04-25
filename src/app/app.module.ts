@@ -8,14 +8,13 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { StoreModule } from '@ngrx/store';
-import { HomeComponent } from './dashboard/home.component';
+import { HomeComponent } from './home/home.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { reducers, metaReducers } from './store';
 import { EffectsModule } from '@ngrx/effects';
 import { UsernamePipe } from './pipes/username.pipe';
 import { AutheffectEffects } from './store/effects/autheffect.effects';
-// import { AutheffectEffects } from './store/effects/autheffect.effects';
 
 @NgModule({
   declarations: [
